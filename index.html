@@ -1,1 +1,91 @@
-<h1>Hello world</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nosqd.ru</title>
+    <style>
+        body,
+        html {
+            height: 100%;
+            background: #212121;
+            color: #F1F5FF;
+            text-align: center;
+            text-shadow: 16px 15px 4px rgba(204, 0, 255, 0.25);
+            font-family: Raleway;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+
+        body {
+            display: flex;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        .cont {
+            margin: auto;
+        }
+        .btn {
+            padding-left: 25px;
+            padding-right: 25px;
+            margin-top: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border: 3px solid rgba(204, 0, 255, 0.25);
+            border-radius: 10px;
+            cursor: pointer;
+            -webkit-transition: 0.1s ease-in-out;
+    -moz-transition: 0.1s ease-in-out;
+    -o-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+        }
+        .btn:hover {
+            transform: rotateZ(2deg) scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cont" id="mount">
+        <noscript>Данный сайт требует включенного JavaScript</noscript>
+    </div>
+    
+
+    <script>
+        const config = {
+            title: "nosqd.ru",
+            links: [
+                {
+                    url: "https://ds.nosqd.ru",
+                    title: "Мой Discord сервер"
+                },
+                {
+                    url: "https://youtube.com/@huesosi1014",
+                    title: "YouTube моего Discord сервера"
+                },
+                {
+                    url: "https://vk.com/nosqdoff",
+                    title: "Я ВКонтакте"
+                },
+                {
+                    url: "https://t.me/nosqd",
+                    title: "Я в Telegram."
+                },
+            ]
+        }
+        document.querySelector("#mount").innerHTML = `<h1>
+            ${config.title}
+        </h1>
+
+        ${config.links.map(link => `<div class="btn" onclick="window.location.href = '${link.url}';">
+            <span>
+                ${link.title}
+            </span>
+        </div>`).join("\n")}`
+    </script>
+</body>
+
+</html>
